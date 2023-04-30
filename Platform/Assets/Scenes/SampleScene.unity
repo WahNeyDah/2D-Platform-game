@@ -7205,7 +7205,8 @@ GameObject:
   - component: {fileID: 1395796333}
   - component: {fileID: 1395796332}
   - component: {fileID: 1395796334}
-  m_Layer: 0
+  - component: {fileID: 1395796335}
+  m_Layer: 6
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7685,15 +7686,29 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1395796334}
+    m_ColliderPaths:
+    - - X: -20000000
+        Y: 0
+      - X: -100000000
+        Y: 0
+      - X: -100000000
+        Y: -30000000
+      - X: -20000000
+        Y: -30000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: -2.0000293, y: -3}
+      - {x: -2.0000293, y: 0}
+      - {x: -10, y: -0.000029300001}
+      - {x: -9.99997, y: -3}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1395796333
@@ -7729,10 +7744,29 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!251 &1395796335
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395796328}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2096319725
 GameObject:
   m_ObjectHideFlags: 0
@@ -7814,8 +7848,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096319725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.22, y: 0.99, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.22, y: 0.9842, z: 0}
+  m_LocalScale: {x: 1, y: 1.005832, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7880,6 +7914,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62d3862908fe26438f7754859460264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpableground:
+    serializedVersion: 2
+    m_Bits: 64
   moveSpeed: 10
   jumpforce: 7
 --- !u!95 &2096319731
