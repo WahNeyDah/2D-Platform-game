@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+
     private int cherries = 0;
+
+    [SerializeField] private Text items;
     private void OnTriggerEnter2D(Collider2D collision)
     { 
 
@@ -12,7 +16,8 @@ public class Item : MonoBehaviour
         {
             Destroy(collision.gameObject);
             cherries++;
-            Debug.Log("Cherries: " + cherries);
+            items.text = "Cherries: "  + cherries;
         }
+
     }
 }
