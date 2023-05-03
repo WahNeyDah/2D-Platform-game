@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player_life : MonoBehaviour
 {
     private Animator anim;
+    [SerializeField] private AudioSource death;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class Player_life : MonoBehaviour
     }
     private void Die()
     {
+        death.Play();
         anim.SetTrigger("Death");
     }
 
